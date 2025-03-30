@@ -20,12 +20,11 @@ class Digito_Instruction_Steps {
 
     private function define_admin_hooks() {
         $admin = new Digito_IS_Admin();
-        add_action( 'admin_menu', array( $admin, 'add_settings_page' ) );
+        add_action( 'admin_menu', array( $admin, 'add_admin_menu' ) );
     }
 
     private function define_public_hooks() {
         $public = new Digito_IS_Public();
-        add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_styles' ) );
-        add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_scripts' ) );
+        add_action( 'wp_enqueue_scripts', array( $public, 'enqueue_scripts' ) ); // Uklonjen 'enqueue_styles'
     }
 }
